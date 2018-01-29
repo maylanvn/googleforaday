@@ -1,0 +1,25 @@
+<div>
+    <mat-form-field class="example-full-width">
+        <span matPrefix></span>
+        <input type="tel" matInput placeholder="Url to index" id="world_index"  [(ngModel)] = "url">
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" (click)="onIndex()">Index</button>
+    <button mat-raised-button color="warn" (click)="clearUrl()">Clear</button>
+</div>
+
+<div class="text" *ngIf="PagesIndexed!=0;">
+    <p>Indexed {{indexResult.PagesIndexed}} new pages and {{indexResult.KeywordsIndexed}} worlds. </p>
+</div>
+
+<router-outlet></router-outlet>
+
+<div class="example-loading-shade"
+     *ngIf="isLoadingResults">
+    <mat-spinner *ngIf="isLoadingResults"></mat-spinner>
+</div>
+
+
+
+
+

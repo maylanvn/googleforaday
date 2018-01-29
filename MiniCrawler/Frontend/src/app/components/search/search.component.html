@@ -1,0 +1,23 @@
+<div >
+    <mat-form-field class="example-full-width">
+        <span matPrefix></span>
+        <input type="tel" matInput placeholder="Search" id="world_search"  [(ngModel)] = "world">
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" (click)="onSearch()">Search</button>
+</div>
+<div>
+    <p>Found {{length}} length results </p>
+</div>
+<div class="row">
+    <mat-list>
+        <app-search-item *ngFor="let search of searchResult;" [search]="search"></app-search-item>
+    </mat-list>
+</div>
+
+<div class="example-loading-shade"
+     *ngIf="isLoadingResults">
+    <mat-spinner *ngIf="isLoadingResults"></mat-spinner>
+</div>
+
+

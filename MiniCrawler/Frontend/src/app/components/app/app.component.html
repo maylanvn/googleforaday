@@ -1,0 +1,10 @@
+<div>
+    <mat-card>
+        <div class="button-row">
+            <a mat-button routerLinkActive="active" [routerLink]="['/search']" color="primary">{{'search' | uppercase}}</a>
+            <strong> | </strong>
+            <a mat-button routerLinkActive="active" [routerLink]="['/index']" color="primary">{{'index' | uppercase}}</a>
+        </div>
+        <router-outlet></router-outlet>
+    </mat-card>
+</div>
